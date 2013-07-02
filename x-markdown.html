@@ -9,9 +9,9 @@
     Polymer.register(this, {
       ready: function() {
         var showdown = new Showdown.converter();
-        var text = this.normaliseString(this.textContent);
+        var text = this.normaliseString(this.innerHTML);
         var markdown = showdown.makeHtml(text);
-        
+
         this.innerHTML = markdown;
       },
       // Remove all leading/trailing whitespace so it's not confused as 
